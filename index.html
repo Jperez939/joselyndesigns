@@ -752,6 +752,112 @@
       display: none;
     }
 
+    .project-gallery {
+  margin-top: 42px;
+  width: 100%;
+}
+
+.gallery-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.gallery-heading .eyebrow {
+  margin: 0;
+}
+
+.gallery-counter,
+.gallery-caption {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.gallery-frame {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ivory);
+  overflow: hidden;
+  min-height: 240px;
+}
+
+.gallery-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 620px;
+  object-fit: contain;
+}
+
+.gallery-arrow {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--espresso);
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.gallery-arrow:hover {
+  background: var(--burgundy);
+  color: var(--ivory);
+}
+
+.gallery-prev {
+  left: 14px;
+}
+
+.gallery-next {
+  right: 14px;
+}
+
+.gallery-caption {
+  margin-top: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 600px) {
+  .project-gallery {
+    margin-top: 30px;
+  }
+
+  .gallery-frame {
+    min-height: 180px;
+  }
+
+  .gallery-frame img {
+    max-height: 420px;
+  }
+
+  .gallery-arrow {
+    width: 34px;
+    height: 34px;
+  }
+
+  .gallery-prev {
+    left: 8px;
+  }
+
+  .gallery-next {
+    right: 8px;
+  }
+}
+
     /* =========================================
        8. RESPONSIVE DESIGN
     ========================================= */
@@ -1397,6 +1503,26 @@
           <div class="detail-value" id="project-detail-tools"></div>
         </div>
       </div>
+      <section class="project-gallery" aria-label="Project image slideshow">
+  <div class="gallery-heading">
+    <p class="eyebrow">A Closer Look</p>
+    <span class="gallery-counter" id="galleryCounter">01 / 03</span>
+  </div>
+
+  <div class="gallery-frame">
+    <button class="gallery-arrow gallery-prev"
+      type="button" aria-label="Previous image">←</button>
+
+    <img id="galleryImage"
+      src=""
+      alt="Additional project detail">
+
+    <button class="gallery-arrow gallery-next"
+      type="button" aria-label="Next image">→</button>
+  </div>
+
+  <p class="gallery-caption" id="galleryCaption"></p>
+</section>
 
       <div class="detail-gallery" id="project-detail-gallery"></div>
 
@@ -1449,7 +1575,22 @@
         role: "Concept, research, and design",
         tools: "Adobe InDesign, Illustrator",
         image: "",
-        gallery: []
+        gallery: [],
+galleryImages: [
+  {
+    src: "images/familiar-strange-1.jpg",
+    caption: "Book cover and overall concept"
+  },
+  {
+    src: "images/familiar-strange-2.jpg",
+    caption: "Interior spreads and image sequence"
+  },
+  {
+    src: "images/familiar-strange-3.jpg",
+    caption: "Typography and printed details"
+  }
+]
+        
       },
       {
         title: "Project Two",
@@ -1458,7 +1599,21 @@
         role: "Art direction and book design",
         tools: "Adobe InDesign, Photoshop",
         image: "",
-        gallery: []
+        gallery: [],
+        galleryImages: [
+  {
+    src: "images/familiar-strange-1.jpg",
+    caption: "Book cover and overall concept"
+  },
+  {
+    src: "images/familiar-strange-2.jpg",
+    caption: "Interior spreads and image sequence"
+  },
+  {
+    src: "images/familiar-strange-3.jpg",
+    caption: "Typography and printed details"
+  }
+]
       },
       {
         title: "Project Three",
@@ -1467,7 +1622,22 @@
         role: "Concept and visual identity",
         tools: "Adobe Illustrator",
         image: "",
-        gallery: []
+        gallery: [],
+        gallery: [],
+        galleryImages: [
+  {
+    src: "images/familiar-strange-1.jpg",
+    caption: "Book cover and overall concept"
+  },
+  {
+    src: "images/familiar-strange-2.jpg",
+    caption: "Interior spreads and image sequence"
+  },
+  {
+    src: "images/familiar-strange-3.jpg",
+    caption: "Typography and printed details"
+  }
+]
       },
       {
         title: "Project Four",
@@ -1476,7 +1646,21 @@
         role: "Research and image-making",
         tools: "Photography and Adobe Photoshop",
         image: "",
-        gallery: []
+        gallery: [],
+        galleryImages: [
+  {
+    src: "images/familiar-strange-1.jpg",
+    caption: "Book cover and overall concept"
+  },
+  {
+    src: "images/familiar-strange-2.jpg",
+    caption: "Interior spreads and image sequence"
+  },
+  {
+    src: "images/familiar-strange-3.jpg",
+    caption: "Typography and printed details"
+  }
+]
       },
       {
         title: "Project Five",
@@ -1485,7 +1669,21 @@
         role: "Concept and packaging design",
         tools: "Adobe Illustrator and physical prototyping",
         image: "",
-        gallery: []
+        gallery: [],
+galleryImages: [
+  {
+    src: "images/familiar-strange-1.jpg",
+    caption: "Book cover and overall concept"
+  },
+  {
+    src: "images/familiar-strange-2.jpg",
+    caption: "Interior spreads and image sequence"
+  },
+  {
+    src: "images/familiar-strange-3.jpg",
+    caption: "Typography and printed details"
+  }
+]
       },
       {
         title: "Project Six",
@@ -1494,7 +1692,21 @@
         role: "Research and creative direction",
         tools: "Mixed media and printed matter",
         image: "",
-        gallery: []
+        gallery: [],
+galleryImages: [
+  {
+    src: "images/familiar-strange-1.jpg",
+    caption: "Book cover and overall concept"
+  },
+  {
+    src: "images/familiar-strange-2.jpg",
+    caption: "Interior spreads and image sequence"
+  },
+  {
+    src: "images/familiar-strange-3.jpg",
+    caption: "Typography and printed details"
+  }
+]
       }
     ];
 
@@ -1588,7 +1800,15 @@
         image.addEventListener("error", () => image.remove());
         gallery.appendChild(image);
       });
+galleryImages = project.galleryImages || [];
+galleryIndex = 0;
 
+const gallerySection = document.querySelector(".project-gallery");
+gallerySection.hidden = galleryImages.length === 0;
+
+if (galleryImages.length > 0) {
+  showGalleryImage(0);
+}
       openOverlay(document.getElementById("project-overlay"));
     }
 
@@ -1663,6 +1883,37 @@
       closeOverlay(false);
       document.getElementById("work").scrollIntoView({ behavior: "smooth" });
     });
+     
+    let galleryImages = [];
+let galleryIndex = 0;
+
+function showGalleryImage(index) {
+  if (!galleryImages.length) return;
+
+  galleryIndex =
+    (index + galleryImages.length) % galleryImages.length;
+
+  const image = galleryImages[galleryIndex];
+
+  document.getElementById("galleryImage").src = image.src;
+  document.getElementById("galleryImage").alt = image.caption;
+  document.getElementById("galleryCaption").textContent =
+    image.caption;
+
+  document.getElementById("galleryCounter").textContent =
+    `${String(galleryIndex + 1).padStart(2, "0")} / ${
+      String(galleryImages.length).padStart(2, "0")
+    }`;
+}
+
+/* Connect the arrows to the slideshow. */
+document.querySelector(".gallery-prev").addEventListener("click", () => {
+  showGalleryImage(galleryIndex - 1);
+});
+
+document.querySelector(".gallery-next").addEventListener("click", () => {
+  showGalleryImage(galleryIndex + 1);
+});
   </script>
 </body>
 </html>
