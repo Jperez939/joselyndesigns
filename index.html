@@ -141,11 +141,14 @@
       text-transform: uppercase;
     }
 
-    /* Replace the text wordmark with your logo image if desired. */
     .brand {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
         display: inline-flex;
         align-items: center;
-         flex-shrink: 0;
+        justify-content: center;
+        flex-shrink: 0;
     }
 
     .brand img {
@@ -153,7 +156,7 @@
         width: 200px;
         max-height: 65px;
         object-fit: contain;
-        object-position: left center;
+        object-position: center;
     }
 
     .nav-links {
@@ -753,7 +756,7 @@
        8. RESPONSIVE DESIGN
     ========================================= */
 
-    @media (min-width: 1200px) {
+    @media (max-width: 1200px) {
       .project-grid {
         column-gap: 35px;
         row-gap: 75px;
@@ -791,6 +794,13 @@
       .hero {
         padding-top: 75px;
       }
+      .hero-title {
+      max-width: 1050px;
+      color: var(--espresso);
+      font-family: var(--serif);
+      font-size: clamp(50px, 8.1vw, 112px);
+      font-weight: 400;
+      line-height: 1.02;}
 
       .hero-topline {
         align-items: flex-start;
@@ -802,6 +812,7 @@
         align-items: flex-start;
         flex-direction: column;
         gap: 22px;
+        margin-bottom: 150px;
       }
 
       .section-heading {
@@ -856,9 +867,8 @@
         flex-direction: column;
         gap: 8px;
       }
-    }
+    
 
-    @media (max-width: 420px) {
       .nav-inner {
         gap: 12px;
       }
@@ -872,13 +882,23 @@
         letter-spacing: 0.04em;
       }
 
-      .brand-name {
-        font-size: 18px;
-      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        position:none;
+        justify-content: none;
+        left: 65%;
+        transform: none;
+    }
 
-      .brand-caption {
-        font-size: 6px;
-      }
+    .brand img {
+        display: block;
+        width: 150px;
+        max-height: 65px;
+        object-fit: contain;
+        object-position: left center;
+    }
 
       .project-grid {
         grid-template-columns: 1fr;
@@ -1383,7 +1403,7 @@
       <hr class="overlay-rule">
 
       <a class="text-link" href="#work" id="back-to-work">
-        Back to selected work <span aria-hidden="true">↗</span>
+        Back to my work <span aria-hidden="true">↗</span>
       </a>
     </section>
   </div>
